@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.main {
+			width: 100%;
+			height: 700px;
+			border: 1px solid red;
+		}
+		.left {
+			float: left;
+			width: 49%;
+			height: 100%;
+			border: 1px solid blue;
+		}
+
+		.right {
+			height: 100%;
+		}
+
+		.l1,
+		.l2,
+		.l3,
+		.l4,
+		.l5 {
+			height: 19.7%;
+			width: 49%;
+			border: 1px solid green;
+		}
+
+		.l1:hover,
+		.l2:hover,
+		.l3:hover,
+		.l4:hover,
+		.l5:hover {
+			border-right: 5px solid black;
+			cursor: pointer;
+			background-color: blue;
+		}
+
+		.r1,
+		.r2,
+		.r3,
+		.r4,
+		.r5 {
+			float: right;
+			width: 49%;
+			height: 100%;
+			background-color: purple;
+		}
+
+		.r2,
+		.r3,
+		.r4,
+		.r5 {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+<div id="app">
+<div class="main">
+<div class="left">
+<div class="l1" v-on:click="sel1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia quia, similique architecto. Nostrum minima velit debitis voluptates, dignissimos nisi accusamus.</div>
+<div class="l2" v-on:click="sel2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque expedita dolore ad error, mollitia enim veritatis libero ratione distinctio id.</div>
+<div class="l3" v-on:click="sel3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam nobis ipsam labore deleniti enim laboriosam cumque incidunt ipsa adipisci numquam.</div>
+<div class="l4" v-on:click="sel4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laboriosam, iste dignissimos voluptatem rem ipsam cupiditate dolorem alias beatae tenetur!</div>
+<div class="l5" v-on:click="sel5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit molestias a tempora iure laboriosam dolore sint dolores, in dolor officiis.</div>
+</div>
+<div class="right">
+<div class="r1" v-bind:style="marker1?'display:block':'display: none'">1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eligendi sed natus nesciunt doloremque sequi commodi quidem veritatis. Dignissimos, veniam.</div>
+<div class="r2" v-bind:style="marker2?'display:block':'display: none'">2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut reprehenderit inventore itaque perferendis? Iusto, et, nesciunt error impedit voluptate aut!</div>
+<div class="r3" v-bind:style="marker3?'display:block':'display: none'">3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, error labore cumque voluptas, adipisci earum dicta assumenda tempora animi atque!</div>
+<div class="r4" v-bind:style="marker4?'display:block':'display: none'">4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo incidunt similique doloribus, possimus earum cumque quis aliquid. Nulla, dolore, quam?</div>
+<div class="r5" v-bind:style="marker5?'display:block':'display: none'">5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, rerum consectetur voluptatem. Voluptas harum consectetur dolor sed perferendis omnis, dignissimos.</div>
+</div>
+</div>
+</div>
+<script src="vue.js"></script>	
+<script>
+	var obj = new Vue({
+    el: "#app",
+    data: {
+       marker1:true,
+       marker2:false,
+       marker3:false,
+       marker4:false,
+       marker5:false 
+    },
+    methods:{
+        sel1: function(){
+       this.marker1=true,
+       this.marker2=false,
+       this.marker3=false,
+       this.marker4=false,
+       this.marker5=false 
+           
+           
+        },
+
+        sel2: function(){
+       this.marker1=false,
+       this.marker2=true,
+       this.marker3=false,
+       this.marker4=false,
+       this.marker5=false 
+           
+           
+        },
+
+        sel3: function(){
+      this.marker1=false,
+       this.marker2=false,
+       this.marker3=true,
+       this.marker4=false,
+       this.marker5=false 
+           
+           
+        },
+
+        sel4: function(){
+       this.marker1=false,
+       this.marker2=false,
+       this.marker3=false,
+       this.marker4=true,
+       this.marker5=false 
+          
+           
+        },
+
+        sel5: function(){
+       this.marker1=false,
+       this.marker2=false,
+       this.marker3=false,
+       this.marker4=false,
+       this.marker5=true 
+           
+           
+        }
+    }
+});
+</script>
+</body>
+</html>
